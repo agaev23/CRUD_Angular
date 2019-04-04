@@ -21,26 +21,6 @@
       "id": 2
     },
     {
-      "firstName": "William",
-      "lastName": "Finch",
-      "birthDay": "1975-05-12",
-      "gender": "male",
-      "available": false,
-      "salary": 4500,
-      "tax": 0.25,
-      "id": 3
-    },
-    {
-      "firstName": "dddd",
-      "lastName": "ddd",
-      "birthDay": "2019-04-08",
-      "gender": "female",
-      "available": true,
-      "salary": 60,
-      "tax": 0.06,
-      "id": 4
-    },
-    {
       "firstName": "dddd",
       "lastName": "ddd",
       "birthDay": "2019-04-08",

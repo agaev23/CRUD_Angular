@@ -2,7 +2,8 @@
 <div class="wrapper">
   <div class="backdrop"(click)="closeHandler()"></div>
   <form [formGroup] = "formGroup" class="employee-form">
-    <h2 class="employee-form-header">New employee</h2>
+    <h2 *ngIf="!currentEmployee.id" class="employee-form-header">New employee</h2>
+    <h2 class="employee-form-header">{{currentEmployee.firstName + ' ' + currentEmployee.lastName}}</h2>
     <div class="employee-form__body">
 
       <div *ngIf="currentEmployee.id" class="employee-form__wrapper">
