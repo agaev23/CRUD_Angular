@@ -85,7 +85,8 @@
 
       <div class="employee-form__wrapper">
         <span class="employee-form__label">Total</span>
-        <span>{{formGroup.get('salary').value + (formGroup.get('tax').value * formGroup.get('salary').value * 0.01) }}</span>
+
+        <span>{{round(formGroup.get('salary').value + (formGroup.get('tax').value * formGroup.get('salary').value * 0.01))}}</span>
       </div>
     </div>
 
@@ -98,3 +99,4 @@
     <button class="employee-form__close" (click)="closeHandler()"><i  class="fa fa-times"></i></button>
   </form>
 </div>
+<app-preloader *ngIf="isPreloaderShown"></app-preloader>

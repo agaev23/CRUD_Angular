@@ -16,6 +16,7 @@ export class CreateEmployeeFormComponent implements OnInit {
   }
 
   public formGroup: FormGroup;
+  public isPreloaderShown;
 
   ngOnInit() {
     this.formGroup = new FormGroup({
@@ -31,10 +32,12 @@ export class CreateEmployeeFormComponent implements OnInit {
   }
 
   addEmployee() {
+    this.isPreloaderShown = true;
     this.formGroup.value.tax = this.formGroup.value.tax / 100;
     this.serverGetterService.post('employees', this.formGroup.value).subscribe(
       () => {
         this.closeHandler();
+        this.isPreloaderShown = false;
       },
       () => {
         alert('something went wrong(');
@@ -47,14 +50,20 @@ export class CreateEmployeeFormComponent implements OnInit {
   }
 
   editEmployee() {
+    this.isPreloaderShown = true;
     this.formGroup.value.tax = this.formGroup.value.tax / 100;
     this.serverGetterService.update('employees/', this.currentEmployee.id, this.formGroup.value).subscribe(
       () => {
         this.closeHandler();
+        this.isPreloaderShown = false;
       },
       () => {
         alert('something went wrong(');
       }
     );
+  }
+
+  round(value: number) {
+    return value.toFixed(2);
   }
 }

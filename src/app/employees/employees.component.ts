@@ -18,6 +18,7 @@ export class EmployeesComponent implements OnInit {
     tax: '',
   };
   public isFormOpen = false;
+  public isPreloaderShown;
 
   constructor(public serverGetter: ServerGetterService) {
   }
@@ -27,9 +28,11 @@ export class EmployeesComponent implements OnInit {
   }
 
   updateTable() {
+    this.isPreloaderShown = true;
     this.serverGetter.get('employees').subscribe(
       (resp) => {
         this.employees = resp;
+        this.isPreloaderShown = false;
       },
       () => {
         alert('something went wrong(');

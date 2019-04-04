@@ -7,12 +7,14 @@ import { EmployeesComponent } from './employees/employees.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateEmployeeFormComponent } from './create-employee-form/create-employee-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PreloaderComponent } from './preloader/preloader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeesComponent,
-    CreateEmployeeFormComponent
+    CreateEmployeeFormComponent,
+    PreloaderComponent
   ],
   imports: [
     BrowserModule,

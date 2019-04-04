@@ -42,3 +42,4 @@
 </div>
 
 <app-create-employee-form *ngIf="isFormOpen" (closeForm)="closeForm()" [currentEmployee] = "currentEmployee"></app-create-employee-form>
+<app-preloader *ngIf="isPreloaderShown"></app-preloader>
