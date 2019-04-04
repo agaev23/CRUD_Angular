@@ -1,0 +1,44 @@
+<div class="employees">
+  <div class="employees__header">
+    <h2 class="employees__title">Employees</h2>
+    <button class="employees__btn" (click)="openForm('add')">Add new</button>
+  </div>
+  <table class="employees-table">
+    <thead class="employees-table__header">
+      <tr class="employees-table__row employees-table__row--header">
+        <th class="employees-table__item">id</th>
+        <th class="employees-table__item">First Name</th>
+        <th class="employees-table__item">Last Name</th>
+        <th class="employees-table__item">Birthday</th>
+        <th class="employees-table__item">Gender</th>
+        <th class="employees-table__item">Available</th>
+        <th class="employees-table__item">Salary, $</th>
+        <th class="employees-table__item">TAX, %</th>
+        <th class="employees-table__item">Total, $</th>
+        <th class="employees-table__item">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees"
+          [ngClass]="{notAvailable : !employee.available}"
+          class="employees-table__row"
+      >
+        <td class="employees-table__item">{{employee.id}}</td>
+        <td class="employees-table__item">{{employee.firstName}}</td>
+        <td class="employees-table__item">{{employee.lastName}}</td>
+        <td class="employees-table__item">{{changeDateFormat(employee.birthDay)}}</td>
+        <td class="employees-table__item">{{employee.gender}}</td>
+        <td class="employees-table__item"><i class="fa" [ngClass]="{'fa-check' : employee.available, 'fa-minus' : !employee.available }"></i></td>
+        <td class="employees-table__item">{{employee.salary}}</td>
+        <td class="employees-table__item">{{employee.tax * 100}}</td>
+        <td class="employees-table__item">{{employee.salary * (employee.tax / 100) + employee.salary}}</td>
+        <td class="employees-table__item">
+          <a href="#" class="employees-table__action" (click)="openForm('edit', employee)">edit</a>
+          <a href="#" class="employees-table__action" (click)="removeEmployee(employee.id)">delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-create-employee-form *ngIf="isFormOpen" (closeForm)="closeForm()" [currentEmployee] = "currentEmployee"></app-create-employee-form>

@@ -1,0 +1,94 @@
+{
+  "employees": [
+    {
+      "firstName": "John",
+      "lastName": "Nilsen",
+      "birthDay": "1942-12-02",
+      "gender": "male",
+      "available": true,
+      "salary": 2500,
+      "tax": 0.12,
+      "id": 1
+    },
+    {
+      "firstName": "Sara",
+      "lastName": "Howerton",
+      "birthDay": "1942-03-23",
+      "gender": "female",
+      "available": true,
+      "salary": 1500,
+      "tax": 0.15,
+      "id": 2
+    },
+    {
+      "firstName": "William",
+      "lastName": "Finch",
+      "birthDay": "1975-05-12",
+      "gender": "male",
+      "available": false,
+      "salary": 4500,
+      "tax": 0.25,
+      "id": 3
+    },
+    {
+      "firstName": "dddd",
+      "lastName": "ddd",
+      "birthDay": "2019-04-08",
+      "gender": "female",
+      "available": true,
+      "salary": 60,
+      "tax": 0.06,
+      "id": 4
+    },
+    {
+      "firstName": "dddd",
+      "lastName": "ddd",
+      "birthDay": "2019-04-08",
+      "gender": "female",
+      "available": true,
+      "salary": 6,
+      "tax": 0.6,
+      "id": 5
+    },
+    {
+      "firstName": "adasds",
+      "lastName": "dasdsad",
+      "birthDay": "2019-04-10",
+      "gender": "male",
+      "available": "",
+      "salary": 12,
+      "tax": 0.11,
+      "id": 6
+    },
+    {
+      "firstName": "rfefd",
+      "lastName": "fsdf",
+      "birthDay": "2019-04-10",
+      "gender": "female",
+      "available": true,
+      "salary": 33,
+      "tax": 0.33,
+      "id": 9
+    },
+    {
+      "firstName": "sdfsdf",
+      "lastName": "fdsfds",
+      "birthDay": "2019-04-18",
+      "gender": "male",
+      "available": "",
+      "salary": 337,
+      "tax": 0.33,
+      "id": 10
+    },
+    {
+      "firstName": "fsf",
+      "lastName": "fsfsd",
+      "birthDay": "2019-04-11",
+      "gender": "female",
+      "available": true,
+      "salary": 100,
+      "tax": 0.05,
+      "id": 12
+    }
+  ]
+}

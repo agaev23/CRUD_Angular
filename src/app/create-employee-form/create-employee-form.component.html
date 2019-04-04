@@ -1,0 +1,99 @@
+
+<div class="wrapper">
+  <div class="backdrop"(click)="closeHandler()"></div>
+  <form [formGroup] = "formGroup" class="employee-form">
+    <h2 class="employee-form-header">New employee</h2>
+    <div class="employee-form__body">
+
+      <div *ngIf="currentEmployee.id" class="employee-form__wrapper">
+        <span class="employee-form__label">ID</span>
+        <span>{{currentEmployee.id}}</span>
+      </div>
+
+      <div class="employee-form__wrapper">
+        <label class="employee-form__label" for="firstName">First Name</label>
+        <input
+          formControlName="firstName"
+          id="firstName"
+          type="text"
+          class="employee-form__field"
+          [ngClass]="{'employee-form__field--hasError': formGroup.get('firstName').touched && formGroup.get('firstName').invalid}"
+        >
+      </div>
+
+      <div class="employee-form__wrapper">
+        <label class="employee-form__label" for="lastName">Last Name</label>
+        <input
+          formControlName="lastName"
+          id="lastName"
+          type="text"
+          class="employee-form__field"
+          [ngClass]="{'employee-form__field--hasError': formGroup.get('lastName').touched && formGroup.get('lastName').invalid}"
+        >
+      </div>
+
+      <div class="employee-form__wrapper">
+        <label class="employee-form__label" for="birthDay">Birthday</label>
+        <input
+          formControlName="birthDay"
+          id="birthDay"
+          type="date"
+          class="employee-form__field"
+          [ngClass]="{'employee-form__field--hasError': formGroup.get('birthDay').touched && formGroup.get('birthDay').invalid}"
+        >
+      </div>
+
+      <div class="employee-form__wrapper">
+        <span class="employee-form__label" >Gender</span>
+        <input class="employee-form__radio" formControlName="gender" id="genderMale" name="gender" type="radio" value="male">
+        <label class="fa employee-form__radio-label" for="genderMale">male</label>
+        <input class="employee-form__radio" formControlName="gender" id="genderFemale" name="gender" type="radio" value="female">
+        <label class="fa employee-form__radio-label" for="genderFemale">female</label>
+      </div>
+
+      <div class="employee-form__wrapper">
+        <span class="employee-form__label">Available</span>
+        <input class="employee-form__checkbox" formControlName="available" id="Available" type="checkbox">
+        <label class="fa employee-form__checkbox-label" for="Available"></label>
+      </div>
+
+      <div class="employee-form__wrapper">
+        <label class="employee-form__label" for="salary">Salary</label>
+        <input
+          min="0"
+          formControlName="salary"
+          id="salary"
+          type="number"
+          class="employee-form__field"
+          [ngClass]="{'employee-form__field--hasError': formGroup.get('salary').touched && formGroup.get('salary').invalid}"
+        >
+      </div>
+
+      <div class="employee-form__wrapper">
+        <label class="employee-form__label" for="tax">Tax</label>
+        <input
+          min="0"
+          max="100"
+          formControlName="tax"
+          id="tax"
+          type="number"
+          class="employee-form__field"
+          [ngClass]="{'employee-form__field--hasError': formGroup.get('tax').touched && formGroup.get('tax').invalid}"
+        >
+      </div>
+
+      <div class="employee-form__wrapper">
+        <span class="employee-form__label">Total</span>
+        <span>{{formGroup.get('salary').value + (formGroup.get('tax').value * formGroup.get('salary').value * 0.01) }}</span>
+      </div>
+    </div>
+
+    <div class="employee-form__btn-wrap">
+      <button *ngIf="!currentEmployee.id" [disabled]="!formGroup.valid" type="submit" class="employee-form__btn employee-form__btn--create" (click)="addEmployee()">Create</button>
+      <button *ngIf="currentEmployee.id" [disabled]="!formGroup.valid" type="submit" class="employee-form__btn employee-form__btn--create" (click)="editEmployee()">Save</button>
+      <button class="employee-form__btn employee-form__btn--cancel" (click)="closeHandler()">Cancel</button>
+    </div>
+
+    <button class="employee-form__close" (click)="closeHandler()"><i  class="fa fa-times"></i></button>
+  </form>
+</div>
