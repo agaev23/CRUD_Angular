@@ -31,7 +31,7 @@
         <td class="employees-table__item"><i class="fa" [ngClass]="{'fa-check' : employee.available, 'fa-minus' : !employee.available }"></i></td>
         <td class="employees-table__item">{{employee.salary}}</td>
         <td class="employees-table__item">{{employee.tax * 100}}</td>
-        <td class="employees-table__item">{{employee.salary * (employee.tax / 100) + employee.salary}}</td>
+        <td class="employees-table__item">{{round(employee.salary * (employee.tax / 100) + employee.salary)}}</td>
         <td class="employees-table__item">
           <a href="#" class="employees-table__action" (click)="openForm('edit', employee)">edit</a>
           <a href="#" class="employees-table__action" (click)="removeEmployee(employee.id)">delete</a>

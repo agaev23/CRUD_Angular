@@ -73,4 +73,8 @@ export class EmployeesComponent implements OnInit {
   public changeDateFormat(data: string) {
     return data.replace(/(\d*)-(\d*)-(\d*)/, '$3.$2.$1');
   }
+
+  round(value: number) {
+    return value.toFixed(2);
+  }
 }
